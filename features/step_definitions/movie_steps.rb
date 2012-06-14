@@ -45,5 +45,7 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
 end
 
 Then /I should see all of the movies/ do
-  Movie.count.should == 10
+  page.body.find(/\S(The Terminator|Amelie|Aladdin|When Harry Met Sally|The Help|
+        Chocolat|2001: A Space Odyssey|The Incredibles|Raiders of the Lost Ark|
+        Chicken Run)\S/).count.should == 10
 end
