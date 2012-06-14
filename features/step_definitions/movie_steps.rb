@@ -31,13 +31,14 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   if uncheck == nil
     rating_list.split(",").each do |rating|
       steps %Q{
-        When I check "#{rating}"
+        When I check "ratings_#{rating}"
       }
     end
   elsif
     rating_list.split(",").each do |rating|
       steps %Q{
-        When I uncheck "#{rating}"
+        When I uncheck "ratings_#{rating}"
       }
+    end
   end
 end
